@@ -7,7 +7,7 @@
 
 <script lang="ts" setup>
 const supaClient = useSupabaseClient();
-const user = supaClient.auth.getUser();
+const user = await supaClient.auth.getUser();
 </script>
 
 <style></style>
