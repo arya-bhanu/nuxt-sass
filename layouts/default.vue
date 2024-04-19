@@ -8,7 +8,7 @@
 		</div>
 		<main class="md:pl-72 pb-10">
 			<!-- navbar -->
-			<nav></nav>
+			<Navbar />
 			<slot />
 		</main>
 	</div>

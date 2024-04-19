@@ -1,5 +1,11 @@
 export default defineNuxtConfig({
-	modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/supabase', "@nuxt/image","nuxt-icon"],
+	modules: [
+		'@nuxtjs/tailwindcss',
+		'shadcn-nuxt',
+		'@nuxtjs/supabase',
+		'@nuxt/image',
+		'nuxt-icon',
+	],
 	shadcn: {
 		/**
 		 * Prefix for all the imported component
@@ -19,5 +25,8 @@ export default defineNuxtConfig({
 			exclude: ['/'],
 			cookieRedirect: false,
 		},
+	},
+	imports: {
+		dirs: ['composables/**', 'composables/supabase/**'],
 	},
 });

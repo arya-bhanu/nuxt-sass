@@ -6,8 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-const supaClient = useSupabaseClient();
-const user = await supaClient.auth.getUser();
+const user = await useGetUser();
 </script>
 
 <style></style>
