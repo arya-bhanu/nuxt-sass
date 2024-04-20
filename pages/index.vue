@@ -1,12 +1,13 @@
 <template>
 	<div>
 		<h1>Home</h1>
-		{{ user }}
 	</div>
 </template>
 
 <script lang="ts" setup>
-const user = await useGetUser();
+definePageMeta({
+	layout: 'home',
+});
 </script>
 
 <style></style>

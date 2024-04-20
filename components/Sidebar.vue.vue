@@ -1,6 +1,6 @@
 <template>
 	<aside
-		class="flex-col flex h-full bg-white shadow-sm border-r py-4 space-y-4"
+		class="flex-col flex h-full bg-white shadow-sm border-r-0 md:border-r py-4 space-y-4"
 	>
 		<div class="px-3 py-2 flex-1">
 			<NuxtLink

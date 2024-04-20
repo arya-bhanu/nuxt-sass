@@ -13,7 +13,7 @@
 							theme: ThemeSupa,
 						}"
 						:providers="['google', 'github']"
-						:redirect-to="'/'"
+						:redirect-to="`${SITE_URL}/confirm`"
 					/>
 				</CardContent>
 			</Card>
@@ -28,6 +28,8 @@ import { ThemeSupa } from '@supabase/auth-ui-shared';
 import { Auth } from '@nuxtbase/auth-ui-vue';
 
 const supabaseClient = useSupabaseClient();
+const runTimeConfig = useRuntimeConfig();
+const SITE_URL = runTimeConfig.public.urlPublic;
 
 definePageMeta({
 	layout: 'home',

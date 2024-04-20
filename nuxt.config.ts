@@ -21,12 +21,18 @@ export default defineNuxtConfig({
 		redirectOptions: {
 			login: '/auth',
 			callback: '/confirm',
-			include: undefined,
+			include: ['/dashboard'],
 			exclude: ['/'],
-			cookieRedirect: false,
+			cookieRedirect: true,
 		},
 	},
 	imports: {
 		dirs: ['composables/**', 'composables/supabase/**'],
 	},
-});
+	runtimeConfig: {
+		public: {
+			urlPublic: process.env.SITE_URL,
+		},
+		openAiKey: process.env.OPEN_AI_KEY,
+	},
+});	
