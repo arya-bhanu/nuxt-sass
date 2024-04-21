@@ -8,7 +8,7 @@
 				<Icon name="lucide:menu" />
 			</Button>
 		</SheetTrigger>
-		<SheetContent>
+		<SheetContent side="left">
 			<SidebarVue />
 		</SheetContent>
 	</Sheet>

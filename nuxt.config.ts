@@ -35,4 +35,9 @@ export default defineNuxtConfig({
 		},
 		openAiKey: process.env.OPEN_AI_KEY,
 	},
-});	
+	components: [
+		{ path: '~/components/shared', prefix: '', extensions: ['.vue'] },
+		{ path: '~/components', prefix: '', extensions: ['.vue'] },
+		{ path: '~/components/ui', prefix: '', extensions: ['.vue'] },
+	],
+});
