@@ -15,18 +15,7 @@
 					<DropdownMenuLabel>My Account </DropdownMenuLabel>
 					<DropdownMenuSeparator> </DropdownMenuSeparator>
 					<div class="flex w-full items-center p-2 pl-3 gap-x-2">
-						<Avatar v-if="user">
-							<AvatarImage
-								v-if="user.user_metadata"
-								:src="user.user_metadata.avatar_url"
-								referrerpolicy="no-referrer"
-							>
-								<AvatarFallback>
-									{{ user.email?.charAt(0).toUpperCase() }}
-									{{ user.email?.charAt(1).toUpperCase() }}
-								</AvatarFallback>
-							</AvatarImage>
-						</Avatar>
+						<UserAvatar />
 						<div>
 							<span class="font-bold block">
 								{{ user?.user_metadata.full_name }}

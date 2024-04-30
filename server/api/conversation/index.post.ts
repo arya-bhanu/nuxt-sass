@@ -4,10 +4,11 @@ const config = useRuntimeConfig();
 
 const openAi = new OpenAI({
 	apiKey: config.openAiKey,
+	organization: config.openAiOrganizationKey,
 });
 
 export default defineEventHandler(async (event) => {
-	const { message } = await readBody(event);
+	const { messages } = await readBody(event);
 
 	if (!openAi) {
 		throw createError({
@@ -16,7 +17,7 @@ export default defineEventHandler(async (event) => {
 		});
 	}
 
-	if (!message) {
+	if (!messages) {
 		throw createError({
 			statusCode: 400,
 			statusMessage: 'message are required',
@@ -25,7 +26,7 @@ export default defineEventHandler(async (event) => {
 
 	const response = await openAi.chat.completions.create({
 		model: 'gpt-3.5-turbo',
-		messages: message,
+		messages,
 	});
 
 	return response.choices[0].message;
